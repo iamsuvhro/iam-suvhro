@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import client, { urlFor } from "../sanityClient";
-import Image from "../assets/img/info.png"; // Ensure this path is correct
 import { Button } from "antd";
 import { useDarkMode } from "../context/DarkModeContext";
 
