@@ -1,11 +1,13 @@
 import React from "react";
-import { Layout, Switch, Tabs } from "antd";
+import { Layout, Switch, Tabs, Tooltip } from "antd";
 import {
   InfoCircleOutlined,
   HomeOutlined,
   ProjectOutlined,
   ContactsOutlined,
   ReadOutlined,
+  SunOutlined,
+  MoonOutlined,
 } from "@ant-design/icons";
 import Home from "../pages/Home";
 import Experience from "../pages/Experience";
@@ -57,8 +59,16 @@ function MainLayout() {
             My portfolio
           </p>
           <div className="flex gap-x-2">
-            <p className={`text-${isDarkMode ? "white" : "gray"} `}>Dark</p>
-            <Switch onChange={toggleDarkMode} className="mt-5" />
+            {/* <p className={`text-${isDarkMode ? "white" : "gray"} `}>Mode</p> */}
+            <Tooltip title={isDarkMode ? "Switch to light" : "Switch to dark"}>
+              <Switch
+                onChange={toggleDarkMode}
+                className="mt-5"
+                style={{ transform: "scale(1.3)", transformOrigin: "left" }}
+                checkedChildren={<SunOutlined />}
+                unCheckedChildren={<MoonOutlined />}
+              />
+            </Tooltip>
           </div>
         </div>
       </Header>
