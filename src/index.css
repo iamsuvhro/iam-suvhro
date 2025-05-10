@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide element on screens smaller than 768px (mobile devices) */
+.hidden-on-mobile {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .hidden-on-mobile {
+      display: block; /* Show the element on larger screens */
+    }
+  }
+  
